@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Loja</title>
+</head>
+<body>
+
+<h1>Produtos</h1>
+<div id="produtos"></div>
+
+<script>
+const API = "http://localhost:3333";
+
+async function carregar() {
+  const res = await fetch(API + "/products");
+  const data = await res.json();
+  const produtos = data.products;
+
+  const div = document.getElementById("produtos");
+
+  produtos.forEach(p => {
+    div.innerHTML += `
+      <div>
+        <h3>${p.name}</h3>
+        <p>R$ ${p.price}</p>
+        <button onclick="comprar('${p.id}')">Comprar</button>
+      </div>
+    `;
+  });
+}
+
+async function comprar(id) {
+  await fetch(API + "/cart", {
+    method: "POST",
+    headers: {"Content-Type": "application/json"},
+    body: JSON.stringify({ productId: id, quantity: 1 })
+  });
+
+  alert("Adicionado!");
+}
+
+carregar();
+</script>
+
+</body>
+</html>

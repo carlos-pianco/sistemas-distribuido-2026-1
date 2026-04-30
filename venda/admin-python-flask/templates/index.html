@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin</title>
+</head>
+<body>
+
+<h1>Painel Admin</h1>
+
+<h2>Produtos</h2>
+<ul>
+{% for p in produtos %}
+  <li>{{ p.name }} - R$ {{ p.price }}</li>
+{% endfor %}
+</ul>
+
+<h2>Pedidos</h2>
+<ul>
+{% for o in pedidos %}
+  <li>{{ o.id }} - {{ o.status }}</li>
+{% endfor %}
+</ul>
+
+</body>
+</html>
