@@ -1,0 +1,122 @@
+# Trabalho 2 – (RMI)
+
+## Disciplina
+Sistemas Distribuídos – QXD0043
+
+## Universidade
+Universidade Federal do Ceará – Campus de Quixadá
+
+## Professor
+Rafael Braga
+
+---
+
+# Tema do Projeto
+
+Sistema de Vendas Online para Comércio Local utilizando Java RMI.
+
+O sistema implementa um modelo cliente-servidor utilizando Remote Method Invocation (RMI), permitindo que clientes remotos realizem operações sobre produtos disponíveis em uma loja virtual.
+
+---
+
+# Objetivo
+
+Implementar uma aplicação distribuída utilizando Java RMI seguindo o modelo request-response descrito no trabalho da disciplina.
+
+A aplicação permite:
+
+- Listagem de produtos;
+- Busca de produtos;
+- Compra de produtos;
+- Cálculo de valor total da compra.
+
+---
+
+# Tecnologias Utilizadas
+
+- Java
+- Java RMI
+- Programação Orientada a Objetos
+- Serialização Java (`Serializable`)
+
+---
+
+# Estrutura do Projeto
+
+```txt
+projeto_vendas_2/
+│
+├── Cliente.java
+├── ClienteRMI.java
+├── ItemVenda.java
+├── LojaService.java
+├── LojaServiceImpl.java
+├── Pedido.java
+├── ProdutoDigital.java
+├── ProdutoFisico.java
+├── Servico.java
+└── ServidorRMI.java
+
+---------------------------
+Estrutura de Classes
+
+--Superclasse
+- ItemVenda
+
+Representa um item genérico da loja.
+
+Atributos:
+ • id
+ • nome
+ • preco
+
+---------------------------
+--Subclasses
+ProdutoFisico
+
+    Descrição: Representa produtos físicos vendidos pela loja.
+
+    Atributos:
+
+    • peso
+
+---------------------------
+ProdutoDigital
+
+    Descrição: Representa produtos digitais.
+
+    Atributos:
+
+    • linkDownload
+
+---------------------------
+Servico
+
+    Descrição: Representa serviços oferecidos pela loja.
+
+    Atributos:
+
+    • duracaoMinutos
+
+---------------------------
+Agregações (“tem-um”)
+Pedido tem Cliente
+
+Um pedido pertence a um cliente.
+
+Pedido tem ItemVenda
+
+Um pedido possui uma lista de itens vendidos.
+---------------------------
+
+Interface Remota
+LojaService
+
+Define os métodos remotos disponíveis aos clientes.
+
+Métodos remotos implementados:
+
+listarItens()
+buscarItem()
+comprarItem()
+calcularTotal()
