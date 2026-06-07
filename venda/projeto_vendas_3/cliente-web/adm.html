@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Área Administrativa</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="painel">
+
+        <h1>🔒 Painel Administrativo</h1>
+
+        <div class="menu-admin">
+
+            <button onclick="listarClientes()">
+                Listar Clientes
+            </button>
+
+            <button onclick="listarPedidos()">
+                Listar Pedidos
+            </button>
+
+            <button onclick="listarProdutosFisicos()">
+                Produtos Físicos
+            </button>
+
+            <button onclick="listarProdutosDigitais()">
+                Produtos Digitais
+            </button>
+
+            <button onclick="listarServicos()">
+                Serviços
+            </button>
+
+        </div>
+
+        <div class="resultado">
+
+            <h2>Resultado</h2>
+
+            <pre id="saida">
+Aguardando consulta...
+            </pre>
+
+        </div>
+
+        <br>
+
+        <a href="index.html">
+            ⬅ Voltar
+        </a>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

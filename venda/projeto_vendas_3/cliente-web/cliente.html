@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Área do Cliente</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="painel">
+
+        <h1>🛒 Loja Virtual</h1>
+
+        <div class="acoes-cliente">
+
+            <button onclick="carregarProdutos()">
+                Carregar Produtos
+            </button>
+
+        </div>
+
+        <div id="produtos" class="grid-produtos">
+
+        </div>
+
+        <div class="calculadora">
+
+            <h2>🧮 Calcular Compra</h2>
+
+            <input
+                type="number"
+                id="idProduto"
+                placeholder="ID do Produto">
+
+            <input
+                type="number"
+                id="quantidadeProduto"
+                placeholder="Quantidade">
+
+            <button onclick="calcularTotalCliente()">
+                Calcular
+            </button>
+
+            <input
+                type="number"
+                id="clienteId"
+                placeholder="ID do Cliente">
+
+            <button onclick="finalizarCompra()">
+                Finalizar Compra
+            </button>
+
+            <h3 id="resultadoTotal">
+                Total: R$ 0,00
+            </h3>
+
+        </div>
+
+        <br>
+
+        <a href="index.html">
+            ⬅ Voltar
+        </a>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

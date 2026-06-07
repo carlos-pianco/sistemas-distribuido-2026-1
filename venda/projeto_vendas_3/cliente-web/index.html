@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Loja Virtual</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="home-container">
+
+        <h1>✨ Brilho & Aroma</h1>
+        <p>Sistema de Vendas - Trabalho de Sistemas Distribuídos</p>
+
+
+        <div class="cards">
+
+            <a href="cliente.html" class="menu-card">
+                <h2>👤 Cliente</h2>
+                <p>Consultar produtos, calcular compras e realizar pedidos.</p>
+            </a>
+
+            <div class="menu-card" onclick="abrirLoginAdm()">
+                <h2>🔒 Administrador</h2>
+                <p>Gerenciar pedidos, clientes e visualizar dados da loja.</p>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div id="modal-login" class="modal">
+
+        <div class="modal-content">
+
+            <span class="fechar" onclick="fecharLoginAdm()">&times;</span>
+
+            <h2>Login do Administrador</h2>
+
+            <input type="text" id="usuarioAdm" placeholder="Usuário">
+
+            <input type="password" id="senhaAdm" placeholder="Senha">
+
+            <button onclick="loginAdm()">Entrar</button>
+
+            <p id="erroLogin"></p>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
